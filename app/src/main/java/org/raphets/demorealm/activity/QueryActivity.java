@@ -33,6 +33,8 @@ public class QueryActivity extends BaseActivity {
                 startActivity(new Intent(QueryActivity.this,AllDogActivity.class));
                 break;
             case R.id.btn_condition_query:
+                startActivity(new Intent(QueryActivity.this,ConditionQueryActivity.class));
+
                 break;
             default:
                 break;

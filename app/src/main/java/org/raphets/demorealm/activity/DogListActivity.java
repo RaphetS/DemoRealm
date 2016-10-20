@@ -59,7 +59,7 @@ public class DogListActivity extends BaseActivity {
 
         Dog dog2 = new Dog();
         dog2.setName("Kate");
-        dog2.setAge(5);
+        dog2.setAge(2);
         dog2.setId("002");
 
         Dog dog3 = new Dog();
@@ -74,7 +74,7 @@ public class DogListActivity extends BaseActivity {
 
         Dog dog5 = new Dog();
         dog5.setName("Mary");
-        dog5.setAge(4);
+        dog5.setAge(1);
         dog5.setId("005");
 
 
@@ -95,7 +95,7 @@ public class DogListActivity extends BaseActivity {
 
         Dog dog9 = new Dog();
         dog9.setName("Lily");
-        dog9.setAge(5);
+        dog9.setAge(1);
         dog9.setId("009");
 
         mDogs.add(dog1);
