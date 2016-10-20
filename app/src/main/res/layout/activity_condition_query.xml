@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/stoke_bg"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:textSize="18sp"
+            android:gravity="center"
+            android:text="ID"
+            android:id="@+id/tv_id"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="@color/colorAccent"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"/>
+        <EditText
+            android:paddingLeft="20dp"
+            android:hint="请输入ID"
+            android:background="@null"
+            android:id="@+id/et_id"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/stoke_bg"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:textSize="18sp"
+            android:gravity="center"
+            android:text="Age"
+            android:id="@+id/tv_age"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="@color/colorAccent"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"/>
+        <EditText
+            android:paddingLeft="20dp"
+            android:hint="请输入年龄"
+            android:background="@null"
+            android:id="@+id/et_age"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_query_id"
+        android:elevation="10dp"
+        android:text="根据Id查询"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/btn_query_age"
+        android:elevation="10dp"
+        android:text="根据Age查询"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
