@@ -1,5 +1,6 @@
 package org.raphets.demorealm.activity;
 
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,8 +9,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.util.Log;
+import android.view.View;
 
 import org.raphets.demorealm.R;
+import org.raphets.demorealm.adapter.BaseAdapter;
 import org.raphets.demorealm.adapter.LikeDogAdapter;
 import org.raphets.demorealm.bean.Dog;
 import org.raphets.demorealm.util.DefaultItemTouchHelpCallback;
@@ -38,6 +42,8 @@ public class AllDogActivity extends BaseActivity {
         setToolbar(mToolbar, "查询所有");
 
         initData();
+
+        addListener();
     }
 
     private void initData() {
@@ -54,7 +60,7 @@ public class AllDogActivity extends BaseActivity {
 
         setSwipeDelete();
 
-        Snackbar.make(getWindow().getDecorView(),"滑动可以删除item",Snackbar.LENGTH_LONG).show();
+        Snackbar.make(mRecyclerView,"滑动删除item、点击Item进入修改界面",Snackbar.LENGTH_LONG).show();
 
     }
 
@@ -81,8 +87,33 @@ public class AllDogActivity extends BaseActivity {
         itemTouchHelper.attachToRecyclerView(mRecyclerView);
     }
 
+    private void addListener() {
+        mAdapter.setOnItemClickListener(new BaseAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Intent intent=new Intent(AllDogActivity.this,UpdateActivity.class);
+                intent.putExtra("id",mDogs.get(position).getId());
+                startActivityForResult(intent,100);
+            }
+        });
+    }
+
+
     @Override
     public int getLayoutId() {
         return R.layout.activity_all_dog;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode==RESULT_OK&&requestCode==100){
+            mDogs.clear();
+            List<Dog> dogs=mRealmHelper.queryAllDog();
+            mDogs.addAll(dogs);
+            mAdapter.notifyDataSetChanged();
+
+        }
     }
 }

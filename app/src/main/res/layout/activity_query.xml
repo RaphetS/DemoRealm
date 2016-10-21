@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
         android:elevation="5dp"
-        android:text="查询所有"
+        android:text="改、查询全部"
         android:textAllCaps="false" />
 
     <Button

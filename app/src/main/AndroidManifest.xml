@@ -3,6 +3,7 @@
     package="org.raphets.demorealm">
 
     <application
+        android:name=".MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,7 +19,8 @@
         <activity android:name=".activity.DogListActivity" />
         <activity android:name=".activity.QueryActivity" />
         <activity android:name=".activity.AllDogActivity" />
-        <activity android:name=".activity.ConditionQueryActivity"></activity>
+        <activity android:name=".activity.ConditionQueryActivity" />
+        <activity android:name=".activity.UpdateActivity"></activity>
     </application>
 
 </manifest>

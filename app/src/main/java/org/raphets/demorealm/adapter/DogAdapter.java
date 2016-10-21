@@ -10,6 +10,8 @@ import org.raphets.demorealm.util.RealmHelper;
 
 import java.util.List;
 
+import io.realm.Realm;
+
 /**
  * Created by matou0289 on 2016/10/20.
  */
@@ -43,6 +45,7 @@ public class DogAdapter extends BaseAdapter<Dog> {
                 if (iv.isSelected()) {
                     iv.setSelected(false);
                     mRealmHleper.deleteDog(dog.getId());
+
                 } else {
                     iv.setSelected(true);
                     mRealmHleper.addDog(dog);
@@ -52,4 +55,5 @@ public class DogAdapter extends BaseAdapter<Dog> {
 
 
     }
+
 }

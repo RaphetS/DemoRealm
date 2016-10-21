@@ -20,20 +20,21 @@ public class RealmHelper {
 
 
     public RealmHelper(Context context) {
-        Realm.init(context);
+
         mRealm = Realm.getInstance(new RealmConfiguration.Builder()
-                .deleteRealmIfMigrationNeeded()
                 .name(DB_NAME)
+                .deleteRealmIfMigrationNeeded()
                 .build());
     }
 
     /**
      * add （增）
      */
-    public void addDog(Dog dog) {
+    public void addDog(final Dog dog) {
         mRealm.beginTransaction();
         mRealm.copyToRealm(dog);
         mRealm.commitTransaction();
+
     }
 
     /**
@@ -44,6 +45,7 @@ public class RealmHelper {
         mRealm.beginTransaction();
         dog.deleteFromRealm();
         mRealm.commitTransaction();
+
     }
 
     /**
@@ -92,6 +94,17 @@ public class RealmHelper {
             return false;
         }else {
             return  true;
+        }
+    }
+
+    public Realm getRealm(){
+
+        return mRealm;
+    }
+
+    public void close(){
+        if (mRealm!=null){
+            mRealm.close();
         }
     }
 }

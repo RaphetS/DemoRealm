@@ -18,7 +18,7 @@ public class QueryActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setToolbar(mToolbar,"查询");
+        setToolbar(mToolbar,"改、查");
     }
 
     @Override
