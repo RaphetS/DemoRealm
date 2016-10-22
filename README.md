@@ -1,6 +1,6 @@
 ##Demo是以本地收藏为应用场景的，实现了对Realm的增删改查等操作，以及异步的增删改查操作
 
-##Demo下载
+##DownloadDemo
 ![image](https://github.com/RaphetS/DemoRealm/blob/master/Screenshot/demoURL.png)
 
 
