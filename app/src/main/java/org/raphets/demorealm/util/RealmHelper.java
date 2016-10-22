@@ -9,22 +9,20 @@ import java.util.List;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
+import io.realm.Sort;
 
 /**
  * Created by matou0289 on 2016/10/20.
  */
 
 public class RealmHelper {
-    private static final String DB_NAME = "myRealm.realm";
+    public static final String DB_NAME = "myRealm.realm";
     private Realm mRealm;
 
 
     public RealmHelper(Context context) {
 
-        mRealm = Realm.getInstance(new RealmConfiguration.Builder()
-                .name(DB_NAME)
-                .deleteRealmIfMigrationNeeded()
-                .build());
+        mRealm = Realm.getDefaultInstance();
     }
 
     /**
@@ -66,7 +64,10 @@ public class RealmHelper {
         /**
          * 对查询结果，按Id进行排序，只能对查询结果进行排序
          */
+        //增序排列
         dogs=dogs.sort("id");
+//        //降序排列
+//        dogs=dogs.sort("id", Sort.DESCENDING);
         return mRealm.copyFromRealm(dogs);
     }
 
@@ -75,6 +76,7 @@ public class RealmHelper {
      */
     public Dog queryDogById(String id) {
         Dog dog = mRealm.where(Dog.class).equalTo("id", id).findFirst();
+
         return dog;
     }
 

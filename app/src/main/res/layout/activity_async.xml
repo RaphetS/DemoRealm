@@ -4,38 +4,25 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/toolbar" />
-
+    <include layout="@layout/toolbar"/>
     <Button
         android:textSize="20sp"
-        android:id="@+id/btn_add"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:elevation="5dp"
-        android:text="增、删"
-        android:textAllCaps="false" />
-
-
-    <Button
-        android:textSize="20sp"
-        android:id="@+id/btn_query"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@color/colorAccent"
-        android:elevation="5dp"
-        android:text="改、查"
-        android:textAllCaps="false" />
-
-    <Button
-        android:textSize="20sp"
-        android:id="@+id/btn_async"
+        android:id="@+id/btn_add_delete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:background="@color/colorAccent"
         android:elevation="5dp"
-        android:text="异步操作"
+        android:text="异步增、删"
+        android:textAllCaps="false" />
+    <Button
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btn_update_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:elevation="5dp"
+        android:text="异步改、查"
         android:textAllCaps="false" />
 </LinearLayout>

@@ -25,6 +25,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ *  查询所有
+ */
 public class AllDogActivity extends BaseActivity {
     @BindView(R.id.toolBar)
     Toolbar mToolbar;
@@ -68,11 +71,12 @@ public class AllDogActivity extends BaseActivity {
         DefaultItemTouchHelpCallback mCallback = new DefaultItemTouchHelpCallback(new DefaultItemTouchHelpCallback.OnItemTouchCallbackListener() {
             @Override
             public void onSwiped(int adapterPosition) {
+                //删除数据库数据
+                mRealmHelper.deleteDog(mDogs.get(adapterPosition).getId());
                 //滑动删除
                 mDogs.remove(adapterPosition);
                 mAdapter.notifyItemRemoved(adapterPosition);
-                //删除数据库数据
-                mRealmHelper.deleteDog(mDogs.get(adapterPosition).getId());
+
             }
 
             @Override

@@ -20,7 +20,12 @@
         <activity android:name=".activity.QueryActivity" />
         <activity android:name=".activity.AllDogActivity" />
         <activity android:name=".activity.ConditionQueryActivity" />
-        <activity android:name=".activity.UpdateActivity"></activity>
+        <activity android:name=".activity.UpdateActivity" />
+        <activity android:name=".activity.OtherQueryActivity" />
+        <activity android:name=".async.AsyncActivity" />
+        <activity android:name=".async.AddDeleteActivity" />
+        <activity android:name=".async.AsyncQueryActivity" />
+        <activity android:name=".async.UpdateCatActivity"></activity>
     </application>
 
 </manifest>

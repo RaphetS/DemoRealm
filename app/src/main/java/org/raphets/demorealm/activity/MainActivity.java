@@ -6,10 +6,15 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import org.raphets.demorealm.R;
+import org.raphets.demorealm.async.AsyncActivity;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 import io.realm.Realm;
 
+/**
+ * 主界面
+ */
 public class MainActivity extends BaseActivity {
     @BindView(R.id.toolBar)
     Toolbar mToolbar;
@@ -30,7 +35,7 @@ public class MainActivity extends BaseActivity {
 
 
 
-    @OnClick({R.id.btn_add,  R.id.btn_query})
+    @OnClick({R.id.btn_add,  R.id.btn_query,R.id.btn_async})
     void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_add:
@@ -38,6 +43,10 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.btn_query:
                 startActivity(new Intent(MainActivity.this,QueryActivity.class));
+                break;
+            case R.id.btn_async:
+                startActivity(new Intent(MainActivity.this,AsyncActivity.class));
+
                 break;
             default:
                 break;
