@@ -1,5 +1,5 @@
 ##Demo是以本地收藏为应用场景的，实现了对Realm的增删改查等操作，以及异步的增删改查操作，欢迎Star、Fork
-
+使用详情请看我的简书http://www.jianshu.com/p/28912c2f31db
 ##DownloadDemo
 ![image](https://github.com/RaphetS/DemoRealm/blob/master/Screenshot/demoURL.png)
 
